@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Onde Sou Milionário? 💰 - Descubra em Quais Países Você é Milionário</title>
+  <meta name="description" content="Descubra em quais países você já é milionário com seu salário atual! Uma ferramenta divertida que converte seu salário para diferentes moedas e mostra onde você é rico.">
+  <meta name="keywords" content="milionário, salário, conversão de moeda, países, riqueza, calculadora, humor">
+  <meta name="author" content="Onde Sou Milionário">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ondesoumilionario.github.io">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ondesoumilionario.github.io">
+  <meta property="og:title" content="Onde Sou Milionário? 💰 - Descubra em Quais Países Você é Milionário">
+  <meta property="og:description" content="Descubra em quais países você já é milionário com seu salário atual! Uma ferramenta divertida que converte seu salário para diferentes moedas.">
+  <meta property="og:image" content="https://ondesoumilionario.github.io/banner-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="600">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ondesoumilionario.github.io">
+  <meta name="twitter:title" content="Onde Sou Milionário? 💰 - Descubra em Quais Países Você é Milionário">
+  <meta name="twitter:description" content="Descubra em quais países você já é milionário com seu salário atual! Uma ferramenta divertida que converte seu salário para diferentes moedas.">
+  <meta name="twitter:image" content="https://ondesoumilionario.github.io/banner-twitter.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#10b981">
+  <meta name="msapplication-TileColor" content="#10b981">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Onde Sou Milionário?",
+    "description": "Descubra em quais países você já é milionário com seu salário atual!",
+    "url": "https://ondesoumilionario.github.io",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BRL"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1 style="font-size: 1.5rem; font-weight: 700;">💰 Onde Sou Milionário?</h1>
+    </div>
+    <div class="header-controls">
+      <select id="langSelect" class="lang-select" aria-label="Selecionar idioma">
+        <option value="pt-BR">🇧🇷 PT</option>
+        <option value="en">🇺🇸 EN</option>
+        <option value="es">🇪🇸 ES</option>
+      </select>
+      <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">
+        🌙 Modo Escuro
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 id="heroTitle" class="animate-slide-up">
+        Onde Sou <span class="hero-emoji">💰</span> Milionário?
+      </h1>
+      <p id="heroSubtitle" class="animate-slide-up">Descubra em quais países você já é milionário com seu salário atual!</p>
+      
+      <div class="hero-input-group">
+        <div class="hero-input-row">
+          <input 
+            type="text" 
+            id="salaryInput" 
+            class="hero-input" 
+            placeholder="Digite seu salário mensal"
+            inputmode="decimal"
+            value="6580"
+            aria-label="Salário mensal"
+          >
+          <select id="baseCurrency" class="hero-select" aria-label="Moeda base">
+            <option value="BRL">BRL - Real Brasileiro</option>
+            <option value="USD">USD - Dólar Americano</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - Libra Esterlina</option>
+            <option value="JPY">JPY - Iene Japonês</option>
+            <option value="CNY">CNY - Yuan Chinês</option>
+            <option value="INR">INR - Rupia Indiana</option>
+            <option value="AUD">AUD - Dólar Australiano</option>
+            <option value="CAD">CAD - Dólar Canadense</option>
+            <option value="CHF">CHF - Franco Suíço</option>
+          </select>
+        </div>
+        <button id="convertBtn" class="hero-btn">
+          Verificar
+        </button>
+      </div>
+      
+      <!-- Stats -->
+      <div class="stats">
+        <div class="stat-card animate-slide-up">
+          <div class="stat-label" id="stat1Label">Milionário em X países</div>
+          <div class="stat-value" id="stat1">—</div>
+        </div>
+        <div class="stat-card animate-slide-up">
+          <div class="stat-label" id="stat2Label">País onde meu salário vale mais</div>
+          <div class="stat-value" id="stat2">—</div>
+        </div>
+        <div class="stat-card animate-slide-up">
+          <div class="stat-label" id="stat3Label">Milionário em X moedas</div>
+          <div class="stat-value" id="stat3">—</div>
+        </div>
+      </div>
+      
+      <div id="updateInfo" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;"></div>
+    </div>
+  </section>
+
+  <!-- Countries Section -->
+  <section id="countriesSection" class="countries-section">
+    <div class="empty-state">
+      <div class="empty-state-icon">💰</div>
+      <p id="emptyStateText">Digite um valor e clique em "Verificar" para começar!</p>
+    </div>
+  </section>
+
+  <!-- Share Section -->
+  <section class="share-section">
+    <h2 id="shareTitle">Compartilhe sua riqueza!</h2>
+    <div class="share-buttons">
+      <button class="share-btn twitter" onclick="shareOnTwitter()" aria-label="Compartilhar no Twitter">
+        🐦 Twitter
+      </button>
+      <button class="share-btn facebook" onclick="shareOnFacebook()" aria-label="Compartilhar no Facebook">
+        📘 Facebook
+      </button>
+      <button class="share-btn whatsapp" onclick="shareOnWhatsApp()" aria-label="Compartilhar no WhatsApp">
+        💬 WhatsApp
+      </button>
+      <button class="share-btn linkedin" onclick="shareOnLinkedIn()" aria-label="Compartilhar no LinkedIn">
+        💼 LinkedIn
+      </button>
+      <button class="share-btn copy" id="copyBtn" onclick="copyLink()" aria-label="Copiar link">
+        📋 Copiar Link
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>💰 Onde Sou Milionário? - <span id="footerDescription">Uma ferramenta divertida para descobrir sua riqueza global</span></p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+      <span id="footerDeveloped">Desenvolvido com alegria por</span> 
+      <a href="https://www.linkedin.com/in/filipeleonelbatista" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600; text-decoration: none;">Filipe Batista</a>
+    </p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+      <span id="footerDataBy">Dados de câmbio fornecidos por</span> 
+      <a href="https://exchangerate.host" target="_blank" rel="noopener" style="color: var(--primary);">exchangerate.host</a>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
